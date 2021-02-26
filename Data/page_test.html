@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html>
+<html>
+<style>
+th, td {
+	 vertical-align: text-top;
+	 min-width: 20px;
+}
+pre {
+	white-space: pre-wrap;
+}
+img {
+	vertical-align: top;
+	width: 400px;
+	height: 250pm;
+}
+</style>
+<body>
+
+<table align="top" border="1" width="80%">
+	<tr>
+		<th>#</th>
+		<th>Original Textual Post</th>
+		<th>Extracted Keywords</th>
+		<th>Candidate Elements</th>
+		<th>Code Template</th>
+		<th>Graph</th>
+	</tr>
+	<tr>
+		<td>1</td>
+		<td><pre>
+You can use the following query to retrieve all numbers for a certain contact:
+
+/* the following line assumes that the contactCursor you described
+ * has the People._ID column at index 0 in its projection. */
+int contactId = contactCursor.getInt(0);
+
+Cursor numberCursor = getContentResolver().query(Phones.CONTENT_URI,
+  new String[] {Phones.NUMBER}, Phones.PERSON_ID + "=" + contactId, null, null);
+while(cursor.moveToNext()) {
+  String number = cursor.getString(0);
+}
+cursor.close();
+		</pre></td>
+		<td>cursor object contact url queri number</td>
+		<td>Cursor.close Cursor.Cursor Cursor.getString Cursor.moveToFirst Cursor.moveToNext Cursor.getColumnIndex String.String Cursor.getCount ContentResolver.ContentResolver SQLiteDatabase.rawQuery SQLiteDatabase.SQLiteDatabase Uri.Uri ContentResolver.query Context.getContentResolver Uri.withAppendedPath Integer.Integer TextView.TextView Integer.parseInt String.valueOf TextView.setText Context.Context View.View ArrayList.ArrayList Bundle.Bundle Activity.Activity Uri.parse InputStream.InputStream AsyncTask.AsyncTask InputStream.close URL.URL</td>
+		<td><pre>
+ContentResolver.query(..) 
+Cursor varCursor 
+Cursor.close(..) 
+Cursor.moveToFirst(..) 
+while 
+Cursor.getCount(..) 
+Cursor.getColumnIndex(..) 
+Cursor.getString(..) 
+String varString 
+Uri.parse(..) 
+TextView varTextView 
+TextView.setText(..) 
+Uri varUri 
+Cursor.moveToNext(..)
+		<pre/></td>
+		<td><img src="graph_image.gif" alt="<graph>" /></td>
+	</tr>
+</table>
+
+</body>
+</html>
+
